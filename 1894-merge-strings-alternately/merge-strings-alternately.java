@@ -1,23 +1,17 @@
 class Solution {
     public String mergeAlternately(String w1, String w2) {
-        String fin = "";
-        int up = 0;
-        int down = 0;
-        for (;up < w1.length() && down < w2.length(); up++ , down++) {
-            StringBuilder sb = new StringBuilder(fin);
-            sb.append(w1.charAt(up));
-            sb.append(w2.charAt(down));
+      StringBuilder sb = new StringBuilder();
 
-            fin = sb.toString();
-        }
-        while (up < w1.length()) {
-            fin += w1.charAt(up);
-            up++;
-        }
-        while ( down < w2.length()) {
-            fin += w2.charAt(down);
-            down++;
-        }
-        return fin;
+      int i = 0;
+    while ( i < w1.length() || i < w2.length()) {
+    if ( i < w1.length()) {
+        sb.append(w1.charAt(i));
+    }
+    if ( i < w2.length()) {
+        sb.append(w2.charAt(i));
+    } 
+    i++;
+    }
+    return sb.toString();
     }
 }
